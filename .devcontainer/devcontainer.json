@@ -1,0 +1,22 @@
+{
+    "name": "Ubuntu 24.04 OpenMP",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "runArgs": [
+        "--userns=keep-id"
+    ],
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.cmake-tools"
+            ]
+        }
+    },
+    "remoteUser": "ubuntu"
+}
