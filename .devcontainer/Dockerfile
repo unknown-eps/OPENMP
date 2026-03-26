@@ -13,7 +13,14 @@ RUN apt-get update && apt-get install -y \
     libgomp1 \
     clang \
     sudo \
+    python3 \
+    python3-pip \
+    python3-matplotlib \
+    python3-numpy \
+    python3-pandas \
     && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir matplotlib pandas --break-system-packages
 
 # Grant passwordless sudo access to the default ubuntu user
 RUN echo "ubuntu ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/ubuntu \
