@@ -18,5 +18,6 @@
             ]
         }
     },
+    "postCreateCommand": "echo 'Container setup complete!'",
     "remoteUser": "ubuntu"
 }
