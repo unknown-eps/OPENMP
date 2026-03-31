@@ -29,14 +29,15 @@ int main()
 
     double *vector = new double[n];
 
-    double start = omp_get_wtime();
     for (int i = 0; i < n; i++)
     {
         vector[i] = (double)rand() / RAND_MAX;
     }
-    for (int col = 0; col < N; col++)
+
+    double start = omp_get_wtime();
 #pragma omp parallel
     {
+        for (int col = 0; col < N; col++)
         {
 #ifdef ADD_NOWAIT
 #pragma omp for schedule(static) nowait
